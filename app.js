@@ -29,6 +29,7 @@ spinButton.addEventListener('click',() =>{
     spinLane('lane3');
 });
 //set up jackpot function 
+const jackpotAmount = 500000;
 //set up win funciton to display winnings 
 
 
