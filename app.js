@@ -1,16 +1,20 @@
 //set symbols for lanes* 
+// let balance = 100000; 
+// let jackpot = 500000;
+
 document.addEventListener('DOMContentLoaded', function () {
 
-let balance = 100000; 
+    let balance = 100000; 
+    let jackpot = 500000;
 let spinCount = 0;
 const symbols = [ 
-    {name: 'naruto', imageSrc: 'img/HD-wallpaper-naruto-kurama-kurama-mode-sage-of-six-path-naruto-uzumaki-nine-tails.jpg'},
-    {name: 'sasuke', imageSrc: 'img/905c30ea029866b949b240ede035cb5989ae2474r1-1368-2048v2_uhq.jpg'},
-    {name: 'itatchi', imageSrc: 'img/16832317_229802720815603_6959446976233233315_n.jpg'},
-    {name: 'kakashi', imageSrc: 'img/desktop-wallpaper-kakashi-naruto-jaw-art-kakashi-sensei.jpg'},
-    {name: 'neji', imageSrc: 'img/neji-hyuga-otwfra4pv99zcckm.jpg'},
-    {name: 'shikamaru', imageSrc: 'img/6CnJhw.jpg'},
-    {name: 'jackpot', imageSrc: 'img/513216.webp'},
+    {name: 'naruto', imageSrc: 'img/HD-wallpaper-naruto-kurama-kurama-mode-sage-of-six-path-naruto-uzumaki-nine-tails.jpg', isJackpotSymbol: false},
+    {name: 'sasuke', imageSrc: 'img/905c30ea029866b949b240ede035cb5989ae2474r1-1368-2048v2_uhq.jpg', isJackpotSymbol: false},
+    {name: 'itatchi', imageSrc: 'img/16832317_229802720815603_6959446976233233315_n.jpg', isJackpotSymbol: false},
+    {name: 'kakashi', imageSrc: 'img/desktop-wallpaper-kakashi-naruto-jaw-art-kakashi-sensei.jpg', isJackpotSymbol: false},
+    {name: 'neji', imageSrc: 'img/neji-hyuga-otwfra4pv99zcckm.jpg', isJackpotSymbol: false},
+    {name: 'shikamaru', imageSrc: 'img/6CnJhw.jpg', isJackpotSymbol: false},
+    {name: 'jackpot', imageSrc: 'img/513216.webp', isJackpotSymbol: true},
 ] //strings until I gather up the images for each characters subject to change 
 //set up bet button and array of wage amounts
 const betButton = document.getElementById('betButton');
@@ -99,6 +103,31 @@ function checkForWin() {
     }
 }
 
+function checkForJackpot() {
+    const lane1Symbol = document.getElementById('lane1').querySelector('.image-symbol').getAttribute('src');
+    const lane2Symbol = document.getElementById('lane2').querySelector('.image-symbol').getAttribute('src');
+    const lane3Symbol = document.getElementById('lane3').querySelector('.image-symbol').getAttribute('src');
+
+    // Check if all three lanes have the jackpot symbol
+    if (
+        symbols.find(symbol => symbol.isJackpotSymbol && symbol.imageSrc === lane1Symbol) &&
+        symbols.find(symbol => symbol.isJackpotSymbol && symbol.imageSrc === lane2Symbol) &&
+        symbols.find(symbol => symbol.isJackpotSymbol && symbol.imageSrc === lane3Symbol)
+    ) {
+        if (jackpot > 0) {
+            balance += jackpot;
+            jackpot = 0; // Reset the jackpot to 0 after winning
+            console.log('Congratulations! You won the jackpot!');
+            console.log(`Balance: $${balance}`);
+        } else {
+            console.log('The jackpot has already been won. Try again.');
+        }
+        // Update the balance and jackpot displays immediately after winning
+        document.getElementById('balance').textContent = `Balance: $${balance}`;
+        document.getElementById('jackpotAmount').textContent = `${jackpot}`;
+    }
+}
+
 
 
 
@@ -113,6 +142,7 @@ spinButton.addEventListener('click', () => {
     spinLane('lane2');
     spinLane('lane3');
     checkForWin();
+    checkForJackpot();
     spinCount++;
 });
 });
