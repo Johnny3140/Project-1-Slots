@@ -10,6 +10,7 @@ const symbols = [
     {name: 'kakashi', imageSrc: 'img/desktop-wallpaper-kakashi-naruto-jaw-art-kakashi-sensei.jpg'},
     {name: 'neji', imageSrc: 'img/neji-hyuga-otwfra4pv99zcckm.jpg'},
     {name: 'shikamaru', imageSrc: 'img/6CnJhw.jpg'},
+    {name: 'jackpot', imageSrc: 'img/513216.webp'},
 ] //strings until I gather up the images for each characters subject to change 
 //set up bet button and array of wage amounts
 const betButton = document.getElementById('betButton');
@@ -114,12 +115,4 @@ spinButton.addEventListener('click', () => {
     checkForWin();
     spinCount++;
 });
-
-
-//set up jackpot function 
-// const jackpotAmount = 500000;
-
-
-
-
 });

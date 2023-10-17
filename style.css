@@ -57,4 +57,7 @@ h1{
   }
   
 
-  
+  #jackpotSymbol {
+    max-width: 50px;
+    max-height: 100px;
+  }
