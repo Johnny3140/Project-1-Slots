@@ -71,7 +71,10 @@ function checkForWin() {
 
         // Update the balance display immediately after a win
         document.getElementById('balance').textContent = `Balance: $${balance}`;
-    } else {
+        setTimeout(() => {
+        resultImage.style.display = 'none';
+    },1000);
+    }    else {
         const wagerAmount = parseInt(document.getElementById('wager').value);
 
         if (isNaN(wagerAmount)) {
@@ -87,13 +90,15 @@ function checkForWin() {
             resultImage.style.display = 'block';
              // Update the balance display immediately after a loss
             document.getElementById('balance').textContent = `Balance: $${balance}`;
-        } else {
+            setTimeout(() => {
+                resultImage.style.display = 'none';
+            },1000);
+        } 
+        else {
             console.log('Not enough balance to place this wager.');
         }
     }
-    spinCount++;
     
-    document.getElementById('resultImage').style.display = 'none';
 }
 
 function checkForJackpot() {
@@ -118,7 +123,7 @@ function checkForJackpot() {
         // Update the balance and jackpot displays immediately after winning
         document.getElementById('balance').textContent = `Balance: $${balance}`;
         document.getElementById('jackpotAmount').textContent = `${jackpot}`;
-        resultImage.style.display = 'block';
+      
     }
 }
 // Get a reference to the spin button
@@ -126,11 +131,15 @@ const spinButton = document.getElementById('spinButton');
 
 // Add an event listener for the spin button
 spinButton.addEventListener('click', () => {
+    spinButton.disabled = false
     spinLane('lane1');
     spinLane('lane2');
     spinLane('lane3');
     checkForWin();
     checkForJackpot();
     spinCount++;
+    setTimeout(()=>{
+        spinButton.disabled = false;
+    }, 3000)
 });
 });

@@ -8,16 +8,18 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <input type="number" id="wager">
-    <span id="balance">Balance: $100000</span>
   <img id="resultImage" src="" style="display: none;">
   <img id="winningImage" src="img/winningsym.png" style="display: none;">
   <img id="losingImage" src="img/LOSTSYM.png" style="display: none;">
   
-    git
+    
 
     <h1>Leaf Village Slots</h1>
     <div id="container">
+        <div id="jackpotMessage"> 
+            <p> Jackpot: $<span id="jackpotAmount">500,000</span></p>
+            <img src="img/513216.webp" alt="Jackpot Symbol" id="jackpotSymbol">
+             </div>
         <div id="lanes">
             <div class="lane" id="lane1">
                 <img src="img/HD-wallpaper-naruto-kurama-kurama-mode-sage-of-six-path-naruto-uzumaki-nine-tails.jpg" alt="" class="image-symbol">
@@ -28,11 +30,10 @@
             <div class="lane" id="lane3">
                 <img src="img/16832317_229802720815603_6959446976233233315_n.jpg" alt="" class="image-symbol">
             </div>
-            <div id="jackpotMessage"> 
-               <p> Jackpot: $<span id="jackpotAmount">500,000</span></p>
-               <img src="img/513216.webp" alt="Jackpot Symbol" id="jackpotSymbol">
-                </div>
         </div>
+        
+        <input type="number" id="wager" placeholder="Insert wager here">
+    <span id="balance">Balance: $100000</span>
         <div id="buttons">
             <button id="spinButton">Spin</button>
             </div>
