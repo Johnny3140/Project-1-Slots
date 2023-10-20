@@ -1,4 +1,24 @@
 # My first project 
-#### A slot machince application created by using various html css and java script methods.
+#### A slot machince application created from scratch for my first GA project.
 <img src="img/Screenshot 2023-10-20 at 3.51.18 PM.png" alt="Appliction page">
+
+## Description 
+the name of my application is "Leaf Village Slots" its a siple 3 lane slot machine game with a balance and bet feature with a loss you will lose wager amount from balance and with a winning spin that lands on 3 matching symbols will result in a double your wager win unless you land on jackpot then you will earn jackpot amount.
+
+## <a name="LanguagesIused"></a>Languages Used
+* JavaScript
+* HTML
+* CSS
+
+## Feautures 
+* user can choose custom wager amount 
+* user can spin the machine resulting in symbols changing resulting in a win or loss 
+* user can see if its a win or lost by the updating the balance amount and also a winning or lossing img displaying 
+
+## WireFrame IMG
+* original WireFrame
+<img src="img/IMG_0766.jpg" alt="Original WireFrame">
+
+## Trello Planning 
+<a href="https://trello.com/b/iDiX4SUX/project-1">Click Here</a>
 
