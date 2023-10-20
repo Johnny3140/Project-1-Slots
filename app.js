@@ -1,12 +1,10 @@
 //set symbols for lanes* 
-// let balance = 100000; 
-// let jackpot = 500000;
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    let balance = 100000; 
-    let jackpot = 500000;
+let balance = 100000; 
+let jackpot = 500000;
 let spinCount = 0;
+
 const symbols = [ 
     {name: 'naruto', imageSrc: 'img/HD-wallpaper-naruto-kurama-kurama-mode-sage-of-six-path-naruto-uzumaki-nine-tails.jpg', isJackpotSymbol: false},
     {name: 'sasuke', imageSrc: 'img/905c30ea029866b949b240ede035cb5989ae2474r1-1368-2048v2_uhq.jpg', isJackpotSymbol: false},
@@ -34,9 +32,6 @@ function spinLane(laneId) {
     const symbolImages = Array.from(lane.querySelectorAll('.image-symbol')); // Convert to an array
 
     // Hide all images in the lane
-    // symbolImages.forEach((image) => {
-    //     image.style.display = 'none';
-    // });
 
     // Choose a random symbol for this lane
     const randomSymbolData = getRandomSymbol();
@@ -49,27 +44,21 @@ function spinLane(laneId) {
     })
     
 }
-
-
-
-
-
-
-
 // Function to check for a win and update the balance
 function checkForWin() {
     if (spinCount % 4 === 0) {
         // Grant a win every 4 spins
         const wagerAmount = parseInt(document.getElementById('wager').value);
-
+        const resultImage = document.getElementById('resultImage');
         if (isNaN(wagerAmount)) {
             console.log('Invalid wager amount. Please enter a valid number.');
             return;
         }
-
         if (wagerAmount <= balance) {
             balance += wagerAmount * 2;
             console.log('Congratulations! You won!');
+            resultImage.src ='img/winningsym.png';
+            resultImage.style.display = 'block';
 
             // Update all lanes with the same symbol for the win
             const winSymbol = getRandomSymbol();
@@ -94,13 +83,17 @@ function checkForWin() {
             balance -= wagerAmount; // Deduct the wager from the balance when you lose
             console.log('No win this time. Try again.');
             console.log(`Balance: $${balance}`);
-            
-            // Update the balance display immediately after a loss
+            resultImage.src ='img/LOSTSYM.png';
+            resultImage.style.display = 'block';
+             // Update the balance display immediately after a loss
             document.getElementById('balance').textContent = `Balance: $${balance}`;
         } else {
             console.log('Not enough balance to place this wager.');
         }
     }
+    spinCount++;
+    
+    document.getElementById('resultImage').style.display = 'none';
 }
 
 function checkForJackpot() {
@@ -125,14 +118,9 @@ function checkForJackpot() {
         // Update the balance and jackpot displays immediately after winning
         document.getElementById('balance').textContent = `Balance: $${balance}`;
         document.getElementById('jackpotAmount').textContent = `${jackpot}`;
+        resultImage.style.display = 'block';
     }
 }
-
-
-
-
-
-
 // Get a reference to the spin button
 const spinButton = document.getElementById('spinButton');
 
