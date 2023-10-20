@@ -22,3 +22,19 @@ the name of my application is "Leaf Village Slots" its a siple 3 lane slot machi
 ## Trello Planning 
 <a href="https://trello.com/b/iDiX4SUX/project-1">Click Here</a>
 
+## Github Repo link
+<a href="https://github.com/Johnny3140/Project-1-Slots">GitHub Repository</a>
+
+## Deployed Page 
+<a href="https://johnny3140.github.io/Project-1-Slots/">Deployed Page</a>
+
+## Progress Photos 
+* basic layout <img src="img/Screenshot 2023-10-09 at 7.17.19 PM.png" alt="Basic Layout">
+* Symbol IMGS added <img src="img/Screenshot 2023-10-20 at 12.34.38 PM.png" alt="symbols added">
+* Final Application <img src="img/Screenshot 2023-10-20 at 3.51.18 PM.png" alt="final program">
+
+## Work Cited:
+* N/A
+
+
+
