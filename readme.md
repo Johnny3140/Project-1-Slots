@@ -3,7 +3,7 @@
 <img src="img/Screenshot 2023-10-20 at 3.51.18 PM.png" alt="Appliction page">
 
 ## Description 
-the name of my application is "Leaf Village Slots" its a siple 3 lane slot machine game with a balance and bet feature with a loss you will lose wager amount from balance and with a winning spin that lands on 3 matching symbols will result in a double your wager win unless you land on jackpot then you will earn jackpot amount.
+the name of my application is "Leaf Village Slots" its a simple 3 lane slot machine game with a balance and bet feature with a loss you will lose wager amount from balance and with a winning spin that lands on 3 matching symbols will result in a double your wager win unless you land on jackpot then you will earn jackpot amount.
 
 ## <a name="LanguagesIused"></a>Languages Used
 * JavaScript
